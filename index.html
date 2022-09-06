@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <style>
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        header .logo {
+            font-size: 1.7rem;
+        }
+
+        header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header ul li {
+            list-style: none;
+            margin-left: 20px;
+
+        }
+
+        header ul li a {
+            text-decoration: none;
+            padding: 6px 15px;
+            border-radius: 20px;
+
+        }
+
+        header ul li a:hover,
+        header ul li a.active {
+            /*here we applied the same style to 2 different things, one is on hover, and the other is a class*/
+            background: white;
+            /*give it a background border*/
+            color: blue;
+            /*change the text color to blue when hovered over*/
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"> LOGO </a>
+        <ul>
+            <a href="#">
+                <li>Home</li>
+            </a>
+            <a href="#">
+                <li>About</li>
+            </a>
+            <a href="#">
+                <li>Contact</li>
+            </a>
+        </ul>
+    </header>
+</body>
+
+</html>
