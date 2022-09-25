@@ -2,12 +2,12 @@
 
 <head>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Merriweather:wght@300&family=Open+Sans&display=swap');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
+            font-family: 'Poppins',sans-serif;
         }
 
         body {
@@ -16,15 +16,17 @@
 
         /*start of navigation bar css*/
         header {
+            position: absolute;
             top: 0;
             left: 0;
-            max-width: 100%;
+            width: 100%;
             padding: 30px 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 11;
         }
-
+        
         header .logo {
             font-size: 1.7rem;
             font-weight: 700;
@@ -58,25 +60,34 @@
             background: white;
             color: #2b1055;
         }
-
         /*end of navigation bar css*/
 
         /*start of images css*/
         section {
             position: relative;
-            max-width: 100%;
-            min-height: 100vh;
+            width: 100%;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+        section::before{
+            content:''; /*inser generated content*/
+            position: absolute;
+            bottom:0;
+            width:100%;
+            height: 100px;
+            background:linear-gradient(to top,#1c0522,transparent) ; /*to create a linear effect where the image and text meet*/
+            z-index: 1000;
+        }
         section img{
             position:absolute;
             top:0;
-            bottom: 0;
-            max-width: 100%;
-            min-height: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            pointer-events: none; /*doesn't react to pointer events*/
         }
         section img#moon{ /*to make moon blend in with screen */
             mix-blend-mode: screen;
@@ -85,11 +96,11 @@
             z-index: 10;
         }
         #text{
+            position:absolute;
             color:#fff;
             white-space: nowrap;
-            font-size:6.5vw;
+            font-size:7.5vw;
             z-index:9; /*to create overlapping elements*/
-            transform: translateY(200px); /*move elements vertically (in y axis)*/
         }
         #btn{
             text-decoration: none;
@@ -98,9 +109,30 @@
             border-radius: 40px;
             background-color: #fff;
             color: #2b1055;
-            font-size:1.5em ;
+            font-size: 1.5em;
             z-index: 9;
+            transform: translateY(120px); /*move elements vertically (in y axis)*/=
+
         }
+        /*end of images css*/
+
+        /*start of text css*/
+        .sec{
+           position:relative;
+            padding: 100px;
+            background: #1c0522;
+        }
+        .sec h2{
+            font-size:3.5em;
+            margin-bottom: 10px;
+            color:#fff;
+        }
+        .sec p{
+            font-size:1.2em;
+            
+            color:#fff;
+        }
+        
     </style>
 </head>
 
@@ -117,10 +149,56 @@
         <img src="Images/stars.png" id="stars">
         <img src="Images/moon.png" id="moon">
         <img src="Images/mountains_behind.png" id="mountains_behind">
-        <h2 id="text">Sample Text</h2>
         <a href="#" id="btn">Explore!</a>
+        <h2 id="text">SampleText</h2>
         <img src="Images/mountains_front.png" id="mountains_front">
     </section>
+    <div class="sec">
+        <h2>Sample headline</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.<br><br></p>
+    </div>
+    <script>
+        
+    </script>
 </body>
 
 </html>
